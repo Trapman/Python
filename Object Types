@@ -1,0 +1,88 @@
+#(1) Numbers:
+# include integers (no fractional part), floating-point numbers (have a fractional part), complex numbers, decimals, and rationals
+
+#(2) Strings:
+# used mainly to record textutal info (name, address, etc.) 
+# strings are sequences
+# so you can use operations that support sequences:
+
+# len()
+# indexing []
+# slicing [:]
+
+S = 'Spam'
+len(S)  # returns 4
+
+S[0] # grabs first item, 'S'
+S[1] # grabs second item, 'p'
+S[-1] # grabs last item, 'm'
+S[-2] # grabs second to last item, 'a'
+
+S[1:3] # grabs item 1 up to, but not including item 3, 'pa'
+S[1:] # grabs everything past item 1, 'pam'
+S[0:3] # grabs everything but the last item, 'Spa'
+S[:3] # same as above
+S[:-1] # same as above
+S[:] # grabs everything
+
+#concatenation: S + xyz  returns 'Spamxyz'
+#multiplication: S * 4 returns 'SpamSpamSpamSpam'
+
+#Immutability:
+# strings cannot be changed in place after they're created
+# strictly speaking, you can change a string in place by expanding it into a list and putting back together or use bytearray()
+
+#Type-Specific Methods:
+# split()
+# upper()
+# lower()
+# rstrip()
+
+line = 'aa,bb,cc,dd'
+line.split(',')  # returns ['aa', 'bb', 'cc', 'dd'], basically splits into a list of substrings
+
+S = 'Spam'
+S.upper() # returns SPAM
+
+line = 'aa,bb,cc,dd\n' 
+line.rstrip()     #returns 'aa,bb,cc,dd' , removing \n, the whitespace characters on the left side
+
+line.rstrip().split(')   # combines two operations
+
+#Formatting
+# basically an advanced substituion method
+'s%, eggs, and %s' % ('spam', 'SPAM!')
+# returns 'spam, eggs, SPAM!'
+'{0}, eggs, and {1}'.format('spam', 'SPAM!')
+# returns 'spam, eggs, and SPAM!'
+'{}, eggs, and {}'.format('spam', 'SPAM!')  # same as above, numbers are optional for Python 3.1+
+
+#Getting Help: 
+dir()
+help()
+
+#Other ways to code string:
+\n    # end of line
+\t    # tab
+
+#Pattern Matching:
+import re
+match = re.match('Hello World')
+
+#Lists
+# support all of the sequence operations that strings do. Only difference is that the results are usually lists instead of strings
+L = [123, 'trap', 1.23]
+len(L) # returns 3
+# indexing and slicing work here too
+
+#Type-Specific Opertations:
+append()
+pop()
+sort()
+reverse()
+
+L.append('MEGA')   # returns L = [123, 'trap', 1.23, 'MEGA']
+L.pop(2)           # removes item 2 in list, returns L = [123, 'trap', 'MEGA']
+L.sort()           # arranges list by ascending
+L.reverse()        # arranges list by descending
+
